@@ -62,57 +62,55 @@
                 
                 <section>
                     <!-- cat dialogue box -->
+
+                    <!-- remember the statement in array, start at 0 -->
                     <div class="talkBox cat-door">
-                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+                        <p id="para1" onmouseover="typeWriter(1)">Test</p>
 
                         <button>Submit</button>
                         <button>Reply</button>
                     </div>
 
                     <div class="talkBox cat-exercise">
-                        <p id="para" onmouseover="typeWriter('hello its me me me !')">Test</p>
+                        <p id="para2" onmouseover="typeWriter(2)">Test</p>
 
                         <button>Submit</button>
                         <button>Reply</button>
                     </div>
 
                     <div class="talkBox cat-shy">
-                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
-
+                        <p id="para3" onmouseover="typeWriter(3)">Test</p>
                         <button>Submit</button>
                         <button>Reply</button>
                     </div>
 
                     <div class="talkBox cat-sit">
-                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
-
+                        <p id="para4" onmouseover="typeWriter(4)">Test</p>
                         <button>Submit</button>
                         <button>Reply</button>
                     </div>
 
                     <div class="talkBox cat-look">
-                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
-
+                        <p id="para5" onmouseover="typeWriter(5)">Test</p>
                         <button>Submit</button>
                         <button>Reply</button>
                     </div>
 
                     <div class="talkBox cat-elder">
-                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
-
+                        <p id="para6" onmouseover="typeWriter(6)">Test</p>
                         <button>Submit</button>
                         <button>Reply</button>
                     </div>
 
                     <div class="talkBox cat-loud">
-                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+                        <p id="para7" onmouseover="typeWriter(7)">Test</p>
 
                         <button>Submit</button>
                         <button>Reply</button>
                     </div>
 
                     <div class="talkBox cat-sleep">
-                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+                        <p id="para8" onmouseover="typeWriter(8)">Test</p>
 
                         <button>Submit</button>
                         <button>Reply</button>
@@ -133,10 +131,43 @@
 
 
         <footer>
-
             <img src="images/profile.jfif" alt="designer">
+            
+            <div id="footer-item">
+
+                <div id="about">
+                    <h3>About</h3>
+                    <p>HRaza is an experience web designer. He does ilustration, animation and web design. One of the upcoming promising candidates in Invoke Space.</p>
+                </div>
+
+                <div id="contact">
+                    <h3>Contact</h3>
+                    <p>If you have any questions about my services, or just want to say hello, feel free to contact me. </p>
+                    <p>ICONs here</p>
+                </div>
+
+
+            </div>
+
+
 
         </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -149,8 +180,8 @@
 
             function centralisedOrigin () {
                 //must same as CSS
-                var originWidth = 1000;
-                var originHeight = 1000;
+                const originWidth = 1000;
+                const originHeight = 1000;
                 
                 document.getElementById('zoomOrigin').style.top = `${windowHeight/2 - originHeight/2}px`;
                 
@@ -163,28 +194,47 @@
 
             // sample text to test typeWriter
             // var text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
-            var dataText;
-            
-            function typeWriter(dataText) {
 
-                console.log(dataText, typeof dataT);
-                var totalLength = dataText.length;
+            var dialogNum;
+
+            function typeWriter(dialogNum) {
+                
+                var dataText = [
+                    ".....", // put as the fill in only so easy numbering start 1, lol
+                    "This is statement Number 1", 
+                    "This is statement Number 2", 
+                    "This is statement Number 3", 
+                    "This is statement Number 4",
+                    "This is statement Number 5", 
+                    "This is statement Number 6", 
+                    "This is statement Number 7", 
+                    "This is statement Number 8",
+                ];
+
+                console.log(dataText);
+
+                dataT = dataText[dialogNum];
+
+                console.log(dataT, typeof dataT);
+
+                var totalLength = dataT.length;
                 var textBegin = 0;
                 
                 var stopWriter = setInterval(function(){
 
                     if (textBegin <= totalLength) {
-                    textBegin += 1;
 
-                    document.getElementById("para").style.color = "blue";
-                    document.getElementById("para").innerHTML = dataText.substring(0 , textBegin);
+                        textBegin += 1;
+
+                        document.getElementById(`para${dialogNum}`).style.color = "blue";
+                        document.getElementById(`para${dialogNum}`).innerHTML = dataT.substring(0 , textBegin);
 
                     } else {
                     
-                    // stop the writing in looping
-                    clearInterval(stopWriter);
-                    textBegin = 0;
-                    console.log("on writer stop");
+                        // stop the writing in looping
+                        clearInterval(stopWriter);
+                        textBegin = 0;
+                        console.log("on writer stop");
                     }
 
                 },50)

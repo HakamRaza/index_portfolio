@@ -6,8 +6,8 @@ var windowHeight = window.innerHeight;
 
 function centralisedOrigin () {
     //must same as CSS
-    var originWidth = 1000;
-    var originHeight = 1000;
+    const originWidth = 1000;
+    const originHeight = 1000;
     
     document.getElementById('zoomOrigin').style.top = `${windowHeight/2 - originHeight/2}px`;
     

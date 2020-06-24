@@ -236,6 +236,8 @@ footer {
 
     /* hide the footer */
     /* display: none; */
+    margin: 0 auto;
+
 }
 
 footer img {
@@ -248,4 +250,49 @@ footer img {
     /* margin: 0 0; */
     transform: translate(25%, -45%);
 
+}
+
+#footer-item {
+    width: 80%;
+    height: 100%;
+    border: 1px solid green;
+
+    padding: 1em;
+    
+    float: right;
+
+}
+
+footer h3, p {
+    color: white;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    text-align:left;
+
+    padding: 0 0.5em;
+}
+
+footer h3 {
+    margin-bottom: 0.5em;
+}
+
+footer p {
+    font-size: smaller;
+}
+
+
+#about {
+    max-width: 25%;
+    height: 100%;
+
+    border: 1px solid blue;
+    float: left;
+}
+
+#contact {
+    max-width: 40%;
+    height: 100%;
+
+    border: 1px solid blue;
+    float: right;
 }
