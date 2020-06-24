@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* background whole body */
+    /* background-color: black; */
+}
+
+:root {
+
+    /* set predefault setting here */
+    --clr-theme : rgb(255, 123, 0);
+    
+    
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+
+
+    border: 2px solid tomato;
+
+    /* adding margin top just to SEE: ! */
+    margin: 0px auto;
+
+    position: relative;
+
+    /* remove excess from container/ browser view */
+    overflow: scroll;
+    /* overflow: hidden; */
+}
+
+header {
+    width: 100%;
+    height: 50px;
+
+    background-color: orange;
+
+    /* position is fixed... */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* on top foremost */
+    z-index: 9999;
+}
+
+
+#zoomOrigin {
+    width: 1000px;
+    height: 1000px;
+
+    background-color: rgba(255, 192, 203, 0.551);
+    
+    position: absolute;
+
+    top: 0;
+    left: 0%;
+    
+    /* update and change the scale here for the whole animation */
+    transform: scale(1);
+
+}
+
+/* ================================================================ */
+
+#sky {
+    height: 100%;
+    width: 100%;
+
+    background-image: url('images/morning.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    /* adding blacken effect to sky */
+    /* filter: grayscale(90%); */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#land {
+    height: 100%;
+    width: 100%;
+
+    background-image: url('images/land.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#home {
+    height: 100%;
+    width: 100%;
+
+    /* border: 1px solid green; */
+
+    background-image: url('images/home.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+}
+
+/* ================================================================ */
+
+.cat img {
+
+    width: 80px;
+    height: auto;
+    border: 1px solid green;
+    
+}
+
+.cat:hover {
+    transform: scale(1.2);
+    
+}
+
+.cat-door {
+    /* position relative to Origin */
+    position: absolute;
+    top: 38%;
+    left: 83%;
+}
+
+
+.cat-exercise {
+    /* position relative to Origin */
+    position: absolute;
+    top: 45%;
+    left: 56%;
+}
+
+/* .cat-exercise::before {
+    width: 100% ;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px double black;
+
+    position: absolute;
+
+    content: 'Testtttttttttttttttttttt';
+} */
+
+.cat-shy {
+    /* position relative to Origin */
+    position: absolute;
+    top: 25%;
+    left: 74%;
+}
+
+.cat-sit {
+    /* position relative to Origin */
+    position: absolute;
+    top: 22%;
+    left: 58%;
+}
+
+.cat-look {
+    /* position relative to Origin */
+    position: absolute;
+    top: 31%;
+    left: 51%;
+}
+
+
+.cat-elder {
+    /* position relative to Origin */
+    position: absolute;
+    top: 28%;
+    left: 32%;
+}
+
+.cat-loud {
+    /* position relative to Origin */
+    position: absolute;
+    top: 59%;
+    left: 34%;
+}
+
+.cat-sleep {
+    /* position relative to Origin */
+    position: absolute;
+    top: 46%;
+    left: 22%;
+}
+
+/* ========================================================== */
+
+
+.talkBox {
+    width: 15% ;
+    height: 8%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px double black;
+
+    padding: 1em;
+    font-size: 10px;
+    font-family: sans-serif;
+    text-align: justify;
+
+    /* make overflow text scroll */
+    overflow-y: scroll;
+
+    transform: translate(-90%, -78%);
+}
+
+
+
+/* ==================footer stuff====================== */
+
+footer {
+    width: 100%;
+    height: 150px;
+
+    background-color: orange;
+
+    /* position is fixed... */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    /* on top foremost */
+    z-index: 9999;
+
+    /* hide the footer */
+    /* display: none; */
+}
+
+footer img {
+    /* width: 100px; */
+    height: 150%;
+
+    border-radius: 40%;
+    border: 2px solid orange;
+    float: left;
+    /* margin: 0 0; */
+    transform: translate(25%, -45%);
+
+}

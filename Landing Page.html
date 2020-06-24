@@ -1,0 +1,203 @@
+<html>
+    <head>
+        <title>My Profiles | Hakam Raza</title>
+
+        <!-- for mobile, viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="stylesheet" href="Landing Page.css">
+
+        
+    </head>
+
+
+
+    <body>
+
+        <header>
+            <div style="float: right;" onclick="centralisedOrigin()">Click Here</div>
+
+        </header>
+
+        <div id="container">
+
+            
+
+            <div id="zoomOrigin">
+          
+                <section>
+                    <!-- background images  -->
+                    
+                    <div id="sky"></div>
+    
+                    <div id="land"></div>
+                    
+                    <div id="home"></div>
+
+                </section>
+
+                </section>
+                    <!-- cat images and class -->
+                    
+                    <div class="cat cat-door"><img src="images/cat-steady.png" alt=""></div>
+                    
+                    <div class="cat cat-exercise"><img src="images/cat-exercise.png" alt=""></div>
+                    
+                    <div class="cat cat-shy"><img src="images/cat-shy.png" alt=""></div>
+                    
+                    <div class="cat cat-sit"><img src="images/cat-sit.png" alt=""></div>
+                    
+                    <div class="cat cat-look"><img src="images/cat-look.png" alt=""></div>
+                    
+                    <div class="cat cat-elder"><img src="images/cat-elder.png" alt=""></div>
+                    
+                    <div class="cat cat-loud"><img src="images/cat-loud.png" alt=""></div>
+                    
+                    <div class="cat cat-sleep"><img src="images/cat-sleep.png" alt=""></div>
+
+                <section>
+
+                
+                <section>
+                    <!-- cat dialogue box -->
+                    <div class="talkBox cat-door">
+                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                    <div class="talkBox cat-exercise">
+                        <p id="para" onmouseover="typeWriter('hello its me me me !')">Test</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                    <div class="talkBox cat-shy">
+                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                    <div class="talkBox cat-sit">
+                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                    <div class="talkBox cat-look">
+                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                    <div class="talkBox cat-elder">
+                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                    <div class="talkBox cat-loud">
+                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                    <div class="talkBox cat-sleep">
+                        <p>Test, test, Test, this is dialog box cat 1, what ever you say dude... test....test... garbage sentence...sdjklajdkl sajkl;djas lkjd;laj;lkdajlk ;sjdlkas;jl k;jalk;d jlka;sjdl;kasjl;</p>
+
+                        <button>Submit</button>
+                        <button>Reply</button>
+                    </div>
+
+                </section>
+
+                
+                
+                
+                
+
+
+            </div> <!-- zoomOrigin div end here -->
+        </div><!-- container div end here -->
+
+        
+
+
+        <footer>
+
+            <img src="images/profile.jfif" alt="designer">
+
+        </footer>
+
+
+
+        <!-- <script src="Landing Page.js"></script> -->
+        <script>
+
+            // detect window screen and height to arrange position
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            function centralisedOrigin () {
+                //must same as CSS
+                var originWidth = 1000;
+                var originHeight = 1000;
+                
+                document.getElementById('zoomOrigin').style.top = `${windowHeight/2 - originHeight/2}px`;
+                
+                document.getElementById('zoomOrigin').style.left = `${windowWidth/2 - originWidth/2}px`;
+            }
+
+
+
+            // typewriter effect for dialogue, executed by mouseover
+
+
+            var text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+            var dataText;
+            
+            function typeWriter(dataText) {
+
+                console.log(dataText, typeof dataT);
+                var totalLength = dataText.length;
+                var textBegin = 0;
+                
+                var stopWriter = setInterval(function(){
+
+                    if (textBegin <= totalLength) {
+                    textBegin += 1;
+
+                    document.getElementById("para").style.color = "blue";
+                    document.getElementById("para").innerHTML = dataText.substring(0 , textBegin);
+
+                    } else {
+                    
+                    // stop the writing in looping
+                    clearInterval(stopWriter);
+                    textBegin = 0;
+                    console.log("on writer stop");
+                    }
+
+                },50)
+
+            }
+            
+            // setInterval(clearInterval(stopWriter), 5000);
+
+        </script>
+    </body>
+
+
+
+
+
+</html>
