@@ -9,6 +9,10 @@ html {
     /* background-color: black; */
 }
 
+a {
+    text-decoration: none;
+}
+
 :root {
 
     /* set predefault setting here */
@@ -253,13 +257,17 @@ footer img {
 }
 
 #footer-item {
-    width: 80%;
+    width: 85%;
     height: 100%;
     border: 1px solid green;
 
     padding: 1em;
     
     float: right;
+
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+
 
 }
 
@@ -280,8 +288,8 @@ footer p {
     font-size: smaller;
 }
 
-
 #about {
+    min-width: 200px;
     max-width: 25%;
     height: 100%;
 
@@ -290,9 +298,26 @@ footer p {
 }
 
 #contact {
+    min-width: 300px;
     max-width: 40%;
     height: 100%;
 
     border: 1px solid blue;
     float: right;
 }
+
+#connect i {
+    text-align: center;
+    margin: 15px 10px;
+    font-size: 30px;
+    color: black;
+}
+
+#connect i:hover {
+    transform: scale(1.2);
+    /* box-shadow: 2px 2px 10px black; */
+
+    filter: drop-shadow(0px 0px 15px white);
+    transition: all 1s;
+}
+
