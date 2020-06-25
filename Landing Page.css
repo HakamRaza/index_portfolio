@@ -204,8 +204,12 @@ header {
 
 
 .talkBox {
-    width: 15% ;
-    height: 8%;
+    /* auto to fit content */
+    height: auto;
+    /* height: 8%; */
+    width: auto;
+    max-width: 15% ;
+
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px double black;
 
@@ -215,12 +219,55 @@ header {
     text-align: justify;
 
     /* make overflow text scroll */
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    /* using auto height instead of scroll y lol */
 
     /* position of box based on cat */
     transform: translate(-90%, -78%);
+    /* transform-origin:bottom; */
 
     scrollbar-width: thin;
+
+    /* arrange button centralize */
+    /* display: flex;
+    flex-direction: column; */
+    display: none;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+#but2, #but4, #but6, #but7, #but8, #leave-name, #leave-msg {
+    display: none;
+}
+
+#leave-name, #leave-msg {
+    font-size: 0.8em;
+    padding: 0 0.1em;
+    width: 90%;
+    height: 90%;
+}
+
+.button {
+    height: auto;
+    width: 80px;
+    padding: 0.5em;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+
+
+    background-color: blue;
+    border: 1px solid white;
+    color: white;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    border:1px solid blue;
+    color: blue;
 }
 
 
@@ -242,7 +289,7 @@ footer {
     z-index: 9999;
 
     /* hide the footer */
-    /* display: none; */
+    display: none;
     margin: 0 auto;
 
 }

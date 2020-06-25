@@ -29,8 +29,6 @@
 
         <div id="container">
 
-            
-
             <div id="zoomOrigin">
           
                 <section>
@@ -47,21 +45,21 @@
                 </section>
                     <!-- cat images and class -->
                     
-                    <div class="cat cat-door"><img src="images/cat-steady.png" alt=""></div>
+                    <div class="cat cat-door"><img src="images/cat-steady.png" alt="" onmouseover="typeWriter(1)"></div>
                     
-                    <div class="cat cat-exercise"><img src="images/cat-exercise.png" alt=""></div>
+                    <div class="cat cat-exercise"><img src="images/cat-exercise.png" alt="" onmouseover="typeWriter(2)"></div>
                     
-                    <div class="cat cat-shy"><img src="images/cat-shy.png" alt=""></div>
+                    <div class="cat cat-shy"><img src="images/cat-shy.png" alt="" onmouseover="typeWriter(3)"></div>
                     
-                    <div class="cat cat-sit"><img src="images/cat-sit.png" alt=""></div>
+                    <div class="cat cat-sit"><img src="images/cat-sit.png" alt="" onmouseover="typeWriter(4)"></div>
                     
-                    <div class="cat cat-look"><img src="images/cat-look.png" alt=""></div>
+                    <div class="cat cat-look"><img src="images/cat-look.png" alt="" onmouseover="typeWriter(5)"></div>
                     
-                    <div class="cat cat-elder"><img src="images/cat-elder.png" alt=""></div>
+                    <div class="cat cat-elder"><img src="images/cat-elder.png" alt="" onmouseover="typeWriter(6)"></div>
                     
-                    <div class="cat cat-loud"><img src="images/cat-loud.png" alt=""></div>
+                    <div class="cat cat-loud"><img src="images/cat-loud.png" alt="" onmouseover="typeWriter(7)"></div>
                     
-                    <div class="cat cat-sleep"><img src="images/cat-sleep.png" alt=""></div>
+                    <div class="cat cat-sleep"><img src="images/cat-sleep.png" alt="" onmouseover="typeWriter(8)"></div>
 
                 <section>
 
@@ -71,63 +69,60 @@
 
                     <!-- remember the statement in array, start at 0 -->
                     <div class="talkBox cat-door">
-                        <p id="para1" onmouseover="typeWriter(1)">Test</p>
-
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <p id="para1">Meow...</p>
                     </div>
 
                     <div class="talkBox cat-exercise">
-                        <p id="para2" onmouseover="typeWriter(2)">Test</p>
-
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <p id="para2">Meow...</p>
+                        <br/>                        
+                        <div id='but2' class='button' onclick=''>About</div>
                     </div>
 
                     <div class="talkBox cat-shy">
-                        <p id="para3" onmouseover="typeWriter(3)">Test</p>
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <p id="para3">Meow...</p>
+                        <br/>
                     </div>
 
                     <div class="talkBox cat-sit">
-                        <p id="para4" onmouseover="typeWriter(4)">Test</p>
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <p id="para4">Meow...</p>
+                        <br/>
+                        <div id='but4' class='button' onclick=''>Look Here! </div> 
                     </div>
 
                     <div class="talkBox cat-look">
-                        <p id="para5" onmouseover="typeWriter(5)">Test</p>
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <p id="para5">Meow...</p>
+                        <br/>
                     </div>
 
                     <div class="talkBox cat-elder">
-                        <p id="para6" onmouseover="typeWriter(6)">Test</p>
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <p id="para6">Meow...</p>
+                        <br/>
+                        <div id='but6' class='button' onclick=''>Projects</div>
                     </div>
 
                     <div class="talkBox cat-loud">
-                        <p id="para7" onmouseover="typeWriter(7)">Test</p>
+                        <p id="para7">Meow...</p>
+                        <br/>
 
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <audio id="mewsinging" src="audio/rickrolled.mp3"></audio>
+                        <div id='but7' class='button' onclick='playPauseSnd()'>Play/Pause</div>
+
                     </div>
 
                     <div class="talkBox cat-sleep">
-                        <p id="para8" onmouseover="typeWriter(8)">Test</p>
+                        <p id="para8">Meow...</p>
+                        <br/>
+                        <input id='leave-name' type='text' placeholder='Name here..'>
+                        <br/>
+                        <input id='leave-msg' type='text' placeholder='Message to master..'>
+                        <br/>
 
-                        <button>Submit</button>
-                        <button>Reply</button>
+                        <div id='but8' class='button' onclick=''>Submit</div>
+
                     </div>
 
                 </section>
-
-                
-                
-                
-                
+              
 
 
             </div> <!-- zoomOrigin div end here -->
@@ -137,6 +132,8 @@
 
 
         <footer>
+            <!-- footer section start here -->
+
             <img src="images/profile.jfif" alt="designer">
             
             <div id="footer-item">
@@ -165,17 +162,7 @@
             </div>
 
 
-
         </footer>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -190,52 +177,54 @@
         <script>
 
             // detect window screen and height to arrange position
-            var windowWidth = window.innerWidth;
-            var windowHeight = window.innerHeight;
+            var windowW = window.innerWidth;
+            var windowH = window.innerHeight;
 
             function centralisedOrigin () {
                 //must same as CSS
                 const originWidth = 1000;
                 const originHeight = 1000;
                 
-                document.getElementById('zoomOrigin').style.top = `${windowHeight/2 - originHeight/2}px`;
+                document.getElementById('zoomOrigin').style.top = `${windowH/2 - originHeight/2}px`;
                 
-                document.getElementById('zoomOrigin').style.left = `${windowWidth/2 - originWidth/2}px`;
+                document.getElementById('zoomOrigin').style.left = `${windowW/2 - originWidth/2}px`;
             }
-
-
-
-            // typewriter effect for dialogue, executed by mouseover
-
-            // sample text to test typeWriter
-            // var text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
             var dialogNum;
 
             function typeWriter(dialogNum) {
-                
+
                 var dataText = [
                     ".....", // put as the fill in only so easy numbering start 1, lol
-                    "Hey, welcome back.. \nmy master not in the house right naw.. \nPlease come in..", 
-                    "huff, huff... \ngotta burn the fat... \n huff.. huff.. my master will coming back.. \nDo you want to know about my master nya ?", 
-                    "..... \n..... \n...... \nI'm not here....\ngo away...", 
-                    "Zzz..... \nZzz..... \nmy master is awesome. \nI'm dreaming in his achievements..\n",
-                    "Hmm... What is he doing there?", 
-                    "Hey....hey... Wanna see my master projects...? \n Don't tell that guy..", 
-                    "Ooohh.... Wuw...... Hear me singing!", 
-                    "Ops... that's all folks, \n leave some notes before you leave...",
+                    "Hey, welcome back.. <br/> my master not in the house right naw.. <br/> Please come in..", 
+
+                    "huff, huff... <br/> gotta burn the fat... <br/>  huff.. huff.. <br/> my master will be coming back.. <br/> Do you want to know about my master nya ?", 
+
+                    "..... <br/> ..... <br/> ...... <br/> I'm not here....<br/> go away...", 
+
+                    "Zzz..... <br/> Zzz..... <br/> my master is awesome. <br/> I'm dreaming in his achievements..",
+
+                    "Hmm... What is he doing there? <br/>", 
+
+                    "Hey....hey... Wanna see my master projects...? <br/>  Don't tell that guy..",
+
+                    "Ooohh.... Wuw...... <br/>Hear me singing!", 
+
+                    "Ops... that's all folks, <br/>  leave some notes before you leave...",
                 ];
 
-                console.log(dataText);
-
-                dataT = dataText[dialogNum];
-
+                // console.log(dataText);
+                var dataT = dataText[dialogNum];
                 console.log(dataT, typeof dataT);
-
+                
+                
                 var totalLength = dataT.length;
                 var textBegin = 0;
+                var classN = document.getElementsByClassName('talkBox');
+
                 
                 var stopWriter = setInterval(function(){
+                    classN[dialogNum - 1].style.display = 'block';
 
                     if (textBegin <= totalLength) {
 
@@ -244,20 +233,61 @@
                         document.getElementById(`para${dialogNum}`).style.color = "blue";
                         document.getElementById(`para${dialogNum}`).innerHTML = dataT.substring(0 , textBegin);
 
+                        // make the scroll down in chatroom to bottom
+                        // document.querySelectorAll('.talkBox').scrollTop = document.querySelectorAll('.talkBox').scrollHeight;
+
+                        
                     } else {
-                    
+                        
                         // stop the writing in looping
                         clearInterval(stopWriter);
                         textBegin = 0;
                         console.log("on writer stop");
+                        document.getElementById(`but${dialogNum}`).style.display='block';
+                        
+                        if (dialogNum == 8) {
+                            document.getElementById('leave-name').style.display='block';
+                            document.getElementById('leave-msg').style.display='block';
+                        }
                     }
 
-                },70)
+
+                },30)
 
             }
-            
-            // setInterval(clearInterval(stopWriter), 5000);
 
+            var msc = document.getElementById('mewsinging');
+            var isPlaying = false;
+            
+
+            function playPauseSnd() {
+                
+                if (isPlaying == false) {
+                    console.log("Hey, I can Play")
+                    msc.play();
+
+                    document.getElementById('but4').innerHTML = 'Pause';
+
+                    isPlaying = true;
+
+                    return false;
+                    // to stop the function proceed to below function
+                }
+
+                if (isPlaying == true) {
+                    console.log("Hey, I can Pause")
+                    msc.pause();
+
+                    document.getElementById('but4').innerHTML = 'Play';
+
+                    isPlaying = false;
+
+                    return false;
+                    // to stop the function proceed to below function
+
+                }
+            }
+            
         </script>
     </body>
 
