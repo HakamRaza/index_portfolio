@@ -66,8 +66,8 @@
                 
                 <section>
                     <!-- cat dialogue box -->
-
                     <!-- remember the statement in array, start at 0 -->
+
                     <div class="talkBox cat-door">
                         <p id="para1">Meow...</p>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="talkBox cat-exercise">
                         <p id="para2">Meow...</p>
                         <br/>                        
-                        <div id='but2' class='button' onclick=''>About</div>
+                        <div id='but2' class='button' onclick='openModal(2)'>About</div>
                     </div>
 
                     <div class="talkBox cat-shy">
@@ -86,7 +86,7 @@
                     <div class="talkBox cat-sit">
                         <p id="para4">Meow...</p>
                         <br/>
-                        <div id='but4' class='button' onclick=''>Look Here! </div> 
+                        <div id='but4' class='button' onclick='openModal(4)'>Look Here! </div> 
                     </div>
 
                     <div class="talkBox cat-look">
@@ -97,7 +97,7 @@
                     <div class="talkBox cat-elder">
                         <p id="para6">Meow...</p>
                         <br/>
-                        <div id='but6' class='button' onclick=''>Projects</div>
+                        <div id='but6' class='button' onclick='openModal(6)'>Projects</div>
                     </div>
 
                     <div class="talkBox cat-loud">
@@ -105,7 +105,7 @@
                         <br/>
 
                         <audio id="mewsinging" src="audio/rickrolled.mp3"></audio>
-                        <div id='but7' class='button' onclick='playPauseSnd()'>Play/Pause</div>
+                        <div id='but7' class='button' onclick='playPauseSnd()'>Play</div>
 
                     </div>
 
@@ -114,6 +114,10 @@
                         <br/>
                         <input id='leave-name' type='text' placeholder='Name here..'>
                         <br/>
+
+                        <input id='leave-email' type='text' placeholder='Email..'>
+                        <br/>
+
                         <input id='leave-msg' type='text' placeholder='Message to master..'>
                         <br/>
 
@@ -122,17 +126,140 @@
                     </div>
 
                 </section>
-              
 
 
+
+
+                
+                
             </div> <!-- zoomOrigin div end here -->
+            
+            
+            <section>
+                <!-- please note, outside in the container. -->
+                <!-- modal collection Here -->
+                <!-- id based on cat numbering-->
+
+                <div id="modalMain">
+                    <div id="modal2" class="modal-contain">
+                        
+                        <img src="images/about.png" alt="">
+                        <br/>
+                        <h3>About Me</h3>
+                        <br/>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <br/>
+
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><br><br>
+
+                    </div>
+
+                    <div id="modal4" class="modal-contain">
+
+                        <div id="ban1" class="banner">
+                            <h2>Certified Proffesional</h2>
+                            <p>Searching for a certified web deisgner ?. Search no more...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+
+                        <div id="ban2" class="banner">
+                            <h2>Great Designer</h2>
+                            <p>Searching for a certified web deisgner ?. Search no more...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+
+                        <div id="ban3" class="banner">
+                            <h2>Save Your Financial Trouble</h2>
+                            <p>Searching for a certified web deisgner ?. Search no more...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+
+                        <div id="ban4" class="banner">
+                            <h2>Winners of Multiple Awards</h2>
+                            <p>Searching for a certified web deisgner ?. Search no more...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="modal6" class="modal-contain">
+                        <div class="box-proj">
+                            <img src="images/proj.jpg" alt="Project image">
+
+                            <h3><i>Project Name</i></h3>
+                            <p>Project Desctription. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                        </div>
+
+                        <div class="box-proj">
+                            <img src="images/proj.jpg" alt="Project image">
+
+                            <h3><i>Project Name</i></h3>
+                            <p>Project Desctription. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            
+                            <div class="box-text">
+                            </div>
+                        </div>
+
+
+                        <div class="box-proj">
+                            <img src="images/proj.jpg" alt="Project image">
+
+                            <h3><i>Project Name</i></h3>
+                            <p>Project Desctription. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            
+                            <div class="box-text">
+                            </div>
+                        </div>
+
+                        <div class="box-proj">
+                            <img src="images/proj.jpg" alt="Project image">
+
+                            <h3><i>Project Name</i></h3>
+                            <p>Project Desctription. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            
+                            <div class="box-text">
+                            </div>
+                        </div>
+
+
+                        <div class="box-proj">
+                            <img src="images/proj.jpg" alt="Project image">
+
+                            <h3><i>Project Name</i></h3>
+                            <p>Project Desctription. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            
+                            <div class="box-text">
+                            </div>
+                        </div>
+
+
+                        <div class="box-proj">
+                            <img src="images/proj.jpg" alt="Project image">
+
+                            <h3><i>Project Name</i></h3>
+                            <p>Project Desctription. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            
+                            <div class="box-text"></div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                    
+                    <div id="close-modal" class="fa fa-times-circle-o" aria-hidden="true" onclick="closeModal()"></div>
+                </div>
+
+
+
+            </section>
+          
+
         </div><!-- container div end here -->
 
         
 
-
-        <footer>
-            <!-- footer section start here -->
+        <footer> <!-- ===========footer section start here ================-->
 
             <img src="images/profile.jfif" alt="designer">
             
@@ -176,6 +303,8 @@
         <!-- <script src="Landing Page.js"></script> -->
         <script>
 
+            //function to arrange screen and scale ============================
+
             // detect window screen and height to arrange position
             var windowW = window.innerWidth;
             var windowH = window.innerHeight;
@@ -189,6 +318,11 @@
                 
                 document.getElementById('zoomOrigin').style.left = `${windowW/2 - originWidth/2}px`;
             }
+
+
+
+
+            // function on dialog, typewriter ===========================
 
             var dialogNum;
 
@@ -247,14 +381,18 @@
                         
                         if (dialogNum == 8) {
                             document.getElementById('leave-name').style.display='block';
+                            document.getElementById('leave-email').style.display='block';
                             document.getElementById('leave-msg').style.display='block';
                         }
                     }
 
 
-                },30)
+                },0)
 
             }
+
+
+            // function related to music singing by cat =========================
 
             var msc = document.getElementById('mewsinging');
             var isPlaying = false;
@@ -266,7 +404,7 @@
                     console.log("Hey, I can Play")
                     msc.play();
 
-                    document.getElementById('but4').innerHTML = 'Pause';
+                    document.getElementById('but7').innerHTML = 'Pause';
 
                     isPlaying = true;
 
@@ -278,7 +416,7 @@
                     console.log("Hey, I can Pause")
                     msc.pause();
 
-                    document.getElementById('but4').innerHTML = 'Play';
+                    document.getElementById('but7').innerHTML = 'Play';
 
                     isPlaying = false;
 
@@ -287,6 +425,31 @@
 
                 }
             }
+
+            
+            //funtion on modal ===============================================
+            var modalN = 0;
+            var modalMain = document.getElementById('modalMain');
+
+            function openModal(intM) {
+                // update global var
+                modalN = intM;
+
+                // console.log(modalN);
+                // console.log(typeof modalNum);
+                
+                modalMain.style.display = 'grid';
+                document.getElementById(`modal${modalN}`).style.display = 'grid';
+
+            }
+
+            function closeModal() {
+
+                // console.log(modalN);
+                document.getElementById(`modal${modalN}`).style.display = 'none';
+                modalMain.style.display = 'none';
+            }
+
             
         </script>
     </body>
