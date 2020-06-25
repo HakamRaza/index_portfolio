@@ -23,12 +23,25 @@
     <body>
 
         <header>
-            <div style="float: right;" onclick="centralisedOrigin()">Click Here</div>
+            <!-- <div style="float: right;" >Click Here</div> -->
+            
+            <button onclick="centralisedS()">Start point</button>
+            <button onclick="centralisedOrigin()">Center</button>
+            <button onclick="centralisedCat(1)">Cat1</button>
+            <button onclick="centralisedCat(2)">Cat2</button>
+            <button onclick="centralisedCat(3)">Cat3</button>
+            <button onclick="centralisedCat(4)">Cat4</button>
+            <button onclick="centralisedCat(5)">Cat5</button>
+            <button onclick="centralisedCat(6)">Cat6</button>
+            <button onclick="centralisedCat(7)">Cat7</button>
+            <button onclick="centralisedCat(8)">Cat8</button>
+            <button onclick="darkMode()">Dark</button>
 
+            
         </header>
-
+        
         <div id="container">
-
+            
             <div id="zoomOrigin">
           
                 <section>
@@ -256,34 +269,37 @@
           
 
         </div><!-- container div end here -->
-
         
+        
+        <div id="footer2"></div>
 
         <footer> <!-- ===========footer section start here ================-->
 
-            <img src="images/profile.jfif" alt="designer">
+            <div id="fimg">
+                <img src="images/profile.jfif" alt="designer">
+            </div>
             
-            <div id="footer-item">
+            <div id="about">
+                <h3>About</h3>
+                <p>HRaza is an experience web designer. He does ilustration, animation and web design. One of the upcoming promising candidates in Invoke Space.</p>
+            </div>
 
+            <div id="contact">
+                <h3>Contact</h3>
+                <p>If you have any questions about my services, or just want to say hello, feel free to contact me. </p>
+
+            <div id="connect">
+                <a href="#email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="#linkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a href="#fb"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a href="#twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                <a href="#codepen"><i class="fa fa-codepen" aria-hidden="true"></i></a>
+
+            </div>
+            
+            <!-- <div id="footer-item">
                 
-                <div id="about">
-                    <h3>About</h3>
-                    <p>HRaza is an experience web designer. He does ilustration, animation and web design. One of the upcoming promising candidates in Invoke Space.</p>
-                </div>
-
-                <div id="contact">
-                    <h3>Contact</h3>
-                    <p>If you have any questions about my services, or just want to say hello, feel free to contact me. </p>
-
-                    <div id="connect">
-                        <a href="#email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                        <a href="#linkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                        <a href="#fb"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                        <a href="#twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                        <a href="#codepen"><i class="fa fa-codepen" aria-hidden="true"></i></a>
-
-                    </div>
-                </div>
+                </div> -->
 
 
             </div>
@@ -300,26 +316,112 @@
 
 
 
+
         <!-- <script src="Landing Page.js"></script> -->
         <script>
 
             //function to arrange screen and scale ============================
 
             // detect window screen and height to arrange position
-            var windowW = window.innerWidth;
-            var windowH = window.innerHeight;
+            var wW = window.innerWidth;
+            var wH = window.innerHeight;
 
-            function centralisedOrigin () {
-                //must same as CSS
-                const originWidth = 1000;
-                const originHeight = 1000;
+            // console.log('screen: ', wW, wH);
+            var zeroOri = document.getElementById('zoomOrigin');
+
+            // same as in css
+            var scale = 1;
+
+            //must same as CSS
+            // origin picture
+            var posOrigin = { x:0, y:0, W: 1000, H: 1000};
+            // var posOrigin = { x:0, y:0, W: 1000, H: 1000};
+
+            // x and y for cat is in percent, not pixel except w, h
+            var posDoo = { x:0.83, y:0.38, W: 80, H:80};
+            var posExe = { x:0.56, y:0.45, W: 80, H:80};
+            var posShy = { x:0.74, y:0.25, W: 80, H:80};
+            var posSit = { x:0.58, y:0.22, W: 80, H:80};
+            var posLoo = { x:0.51, y:0.31, W: 80, H:80};
+            var posEld = { x:0.32, y:0.28, W: 80, H:80};
+            var posLou = { x:0.34, y:0.59, W: 80, H:80};
+            var posSle = { x:0.22, y:0.46, W: 80, H:80};
+
+            var offSetTO = (posOrigin.H * (scale - 1))/2;
+            var offSetLO = (posOrigin.W * (scale - 1))/2;
+            
+
+            function centralisedS () {
                 
-                document.getElementById('zoomOrigin').style.top = `${windowH/2 - originHeight/2}px`;
-                
-                document.getElementById('zoomOrigin').style.left = `${windowW/2 - originWidth/2}px`;
+                zeroOri.style.top = `${offSetTO}px`;   
+                zeroOri.style.left = `${offSetLO}px`;
             }
 
+            function centralisedOrigin () {
+                
+                zeroOri.style.top = `${(wH - posOrigin.H)/2}px`;   
+                zeroOri.style.left = `${(wW - posOrigin.W)/2}px`;
+            }
 
+            var posN;
+            var posOnFoc = 0;
+
+            function centralisedCat (posN) {
+                posOnFoc = posN;
+                
+                switch(posN) {
+
+                    case 1:
+                        var scalePosY = scale*posDoo.y*posOrigin.H;
+                        var scalePosX = scale*posDoo.x*posOrigin.W;
+                        break;
+                    
+                    case 2:
+                        var scalePosY = scale*posExe.y*posOrigin.H;
+                        var scalePosX = scale*posExe.x*posOrigin.W;
+                        break;
+
+                    case 3:
+                        var scalePosY = scale*posShy.y*posOrigin.H;
+                        var scalePosX = scale*posShy.x*posOrigin.W;
+                        break;
+
+
+                    case 4:
+                        var scalePosY = scale*posSit.y*posOrigin.H;
+                        var scalePosX = scale*posSit.x*posOrigin.W;
+                        break;
+
+
+                    case 5:
+                        var scalePosY = scale*posLoo.y*posOrigin.H;
+                        var scalePosX = scale*posLoo.x*posOrigin.W;
+                        break;
+
+                    case 6:
+                        var scalePosY = scale*posEld.y*posOrigin.H;
+                        var scalePosX = scale*posEld.x*posOrigin.W;
+                        break;
+
+                    case 7:
+                        var scalePosY = scale*posLou.y*posOrigin.H;
+                        var scalePosX = scale*posLou.x*posOrigin.W;
+                        break;
+                    
+                    case 8:
+                        var scalePosY = scale*posSle.y*posOrigin.H;
+                        var scalePosX = scale*posSle.x*posOrigin.W;
+                        break;
+
+                }
+
+                zeroOri.style.top = `${offSetTO - scalePosY + 0.6*wH}px`;   
+                zeroOri.style.left = `${offSetLO - scalePosX + 0.6*wW}px`;
+            }
+
+            // detect window resize to triggered event
+            // addEventListener('resize', centralisedCat(posOnFoc));
+            // window.onresize = centralisedCat(posOnFoc);
 
 
             // function on dialog, typewriter ===========================
@@ -349,7 +451,7 @@
 
                 // console.log(dataText);
                 var dataT = dataText[dialogNum];
-                console.log(dataT, typeof dataT);
+                // console.log(dataT, typeof dataT);
                 
                 
                 var totalLength = dataT.length;
@@ -376,7 +478,7 @@
                         // stop the writing in looping
                         clearInterval(stopWriter);
                         textBegin = 0;
-                        console.log("on writer stop");
+                        // console.log("on writer stop");
                         document.getElementById(`but${dialogNum}`).style.display='block';
                         
                         if (dialogNum == 8) {
@@ -401,7 +503,7 @@
             function playPauseSnd() {
                 
                 if (isPlaying == false) {
-                    console.log("Hey, I can Play")
+                    // console.log("Hey, I can Play");
                     msc.play();
 
                     document.getElementById('but7').innerHTML = 'Pause';
@@ -413,7 +515,7 @@
                 }
 
                 if (isPlaying == true) {
-                    console.log("Hey, I can Pause")
+                    // console.log("Hey, I can Pause");
                     msc.pause();
 
                     document.getElementById('but7').innerHTML = 'Play';
@@ -448,6 +550,34 @@
                 // console.log(modalN);
                 document.getElementById(`modal${modalN}`).style.display = 'none';
                 modalMain.style.display = 'none';
+            }
+
+            //funtion on dark ==================================================
+
+            var darken = false;
+
+            function darkMode() {
+                
+                if (darken == false) {
+                    
+                    document.getElementById('land').style.filter='grayscale(50%)';
+                    document.getElementById('home').style.filter='grayscale(50%)';
+                    document.getElementById('sky').style.backgroundImage = "url('images/night.png')";
+
+                    darken = true;
+                    return false;
+                }
+
+                if (darken == true) {
+
+                    document.getElementById('land').style.filter='grayscale(0%)';
+                    document.getElementById('home').style.filter='grayscale(0%)';
+                    document.getElementById('sky').style.backgroundImage = "url('images/morning.png')";
+
+                    darken = false;
+                    return false;
+
+                }
             }
 
             
