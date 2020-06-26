@@ -6,17 +6,17 @@
 
         var dataText = [
             ".....", // put as the fill in only so easy numbering start 1, lol
-            "Hey, welcome back.. <br/> my master not in the house right naw.. <br/> Please come in..", 
+            "Hey, welcome back.. <br/> my designer not in the house right naw.. <br/> Please come in..", 
 
-            "huff, huff... <br/> gotta burn the fat... <br/>  huff.. huff.. <br/> my master will be coming back.. <br/> Do you want to know about my master nya ?", 
+            "huff, huff... <br/> gotta burn the fat... <br/>  huff.. huff.. <br/> my designer will be coming back.. <br/> Do you want to know about my designer nya ?", 
 
             "..... <br/> ..... <br/> ...... <br/> I'm not here....<br/> go away...", 
 
-            "Zzz..... <br/> Zzz..... <br/> my master is awesome. <br/> I'm dreaming in his achievements..",
+            "Zzz..... <br/> Zzz..... <br/> my designer is awesome. <br/> Look at his achievements..",
 
             "Hmm... What is he doing there? <br/>", 
 
-            "Hey....hey... Wanna see my master projects...? <br/>  Don't tell that guy..",
+            "Hey....hey... Wanna see my designer projects...? <br/>  Don't tell that guy..",
 
             "Ooohh.... Wuw...... <br/>Hear me singing!", 
 
@@ -66,7 +66,7 @@
             }
 
 
-        },30)
+        },10)
 
     }
 
@@ -233,11 +233,23 @@
 
     })
 
+    var posInc2 = 0;
+
+    function centralisedCat2 () {
+
+        if (posInc2 <=7){
+            posInc2 += 1;
+
+        } else {
+            posInc2 = 8;
+        }
+
+        console.log(posInc2);
+        centralisedCat(posInc2);
+    }
 
 
 
-
-    
 
     // function related to music singing by cat =========================
 
