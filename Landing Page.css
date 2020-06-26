@@ -1,52 +1,65 @@
+
+:root {
+
+    /* set predefault setting here */
+    --clr-theme : rgb(255, 123, 0);
+    --clr-themeOpacity:rgba(255, 123, 0, 0.9);
+    --clr-themeDrop:rgb(255, 137, 27);
+    --clr-themeDark:rgb(66, 66, 65);
+    --clr-themeDarkO:rgba(99, 99, 99, 0.707);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+html, body {
     /* background whole body */
-    /* background-color: black; */
+    background-color: var(--clr-themeDark);
+    scroll-behavior: smooth;
 }
 
-:root {
-
-    /* set predefault setting here */
-    --clr-theme : rgb(255, 123, 0);
-    
-    
+a {
+    text-decoration: none;
 }
 
 #container {
     width: 100%;
     height: 100%;
 
-
     border: 2px solid tomato;
-
-    /* adding margin top just to SEE: ! */
     margin: 0px auto;
 
     position: relative;
 
     /* remove excess from container/ browser view */
-    overflow: scroll;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 header {
+
+    /* admin button */
+    display: none;
     width: 100%;
     height: 50px;
-
-    background-color: orange;
-
+    
+    background-color: var(--clr-theme);
+    
     /* position is fixed... */
     position: fixed;
     top: 0;
     left: 0;
-
+    
     /* on top foremost */
-    z-index: 9999;
+    z-index: 100;
+    
+    opacity: 0.5;
+}
+
+ button {
+    float: right;
 }
 
 
@@ -54,15 +67,18 @@ header {
     width: 1000px;
     height: 1000px;
 
-    background-color: rgba(255, 192, 203, 0.551);
+    /* background-color: rgba(255, 192, 203, 0.551); */
+    background-color: lightskyblue;
+    box-shadow: 0 0 50px tomato;
     
     position: absolute;
-
-    top: 0;
-    left: 0%;
     
     /* update and change the scale here for the whole animation */
-    transform: scale(1);
+    /* scale will translate, expand from center., need to adjust 0,0 */
+    transform: scale(2);
+
+    transition: all 2s;
+
 
 }
 
@@ -77,11 +93,11 @@ header {
     background-size: contain;
 
     /* adding blacken effect to sky */
-    /* filter: grayscale(90%); */
 
     position: absolute;
     top: 0;
     left: 0;
+
 }
 
 #land {
@@ -95,6 +111,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
+
 }
 
 #home {
@@ -119,12 +136,12 @@ header {
 
     width: 80px;
     height: auto;
-    border: 1px solid green;
-    
 }
 
 .cat:hover {
+    cursor: pointer;
     transform: scale(1.2);
+    filter: drop-shadow(0 0 10px yellow);
     
 }
 
@@ -201,31 +218,250 @@ header {
 
 
 .talkBox {
-    width: 15% ;
-    height: 8%;
+    /* auto to fit content */
+    height: auto;
+    /* height: 8%; */
+    width: auto;
+    max-width: 15% ;
+
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px double black;
+    border-radius: 10%;
 
     padding: 1em;
     font-size: 10px;
     font-family: sans-serif;
     text-align: justify;
 
-    /* make overflow text scroll */
-    overflow-y: scroll;
-
     transform: translate(-90%, -78%);
+    /* transform-origin:bottom; */
+
+    scrollbar-width: thin;
+
+    display: none;
+    /* grid-template-columns: 1fr; */
+
 }
 
+#but2, #but4, #but6, #but7, #but8, #leave-name, #leave-email, #leave-msg {
+    display: none;
+}
+
+#leave-name, #leave-email, #leave-msg  {
+    font-size: 0.8em;
+    padding: 0 0.1em;
+    width: 90%;
+    height: 90%;
+}
+
+.button {
+    height: auto;
+    width: 80px;
+    padding: 0.5em;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+
+
+    background-color: blue;
+    border: 1px solid white;
+    color: white;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    border:1px solid blue;
+    color: blue;
+}
+
+/* ==================modal stuff===================================== */
+#modalMain {
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-themeOpacity);
+
+    position: absolute;
+    padding: 5%;
+
+    
+    /* will change using function modal */
+    display: none;
+    /* display: grid; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-contain {
+
+    max-width: 100%;;
+    max-height: 100%;
+    /* border: 1px solid green; */
+
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+    background-color: whitesmoke;
+
+    padding: 2em;
+
+}
+
+.modal-contain p {
+    color: black;
+}
+
+
+#close-modal {
+    color: rgb(122, 122, 122);
+    
+    cursor: pointer;
+    font-size: 4em;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+#modal2, #modal4, #modal6 {
+/* #modal2, #modal4 { */
+
+    /* will change using function modal */
+    display: none;
+}
+
+#modal2 img {
+    width: 200px;
+    height: auto;
+}
+
+.banner {
+    width: auto;
+    min-height: 200px;
+    max-height: 300px;
+    border: 1px solid var(--clr-themeDrop);
+    text-align: center;
+
+    /* add spacing to content */
+    padding: 1em;
+    margin: 1em 0;
+    
+    /* adding background image */
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    box-shadow: 0px 0px 10px var(--clr-theme);
+
+    transition: ease-in-out 1s;
+}
+
+.banner h2 {
+    margin-bottom: 2em;
+}
+
+#ban1:hover {
+    background-image: url("images/ac1.png");
+    transform: scale(1.03);
+}
+
+#ban2:hover {
+    background-image: url("images/ac2.png");
+    transform: scale(1.03);
+}
+
+#ban3:hover {
+    background-image: url("images/ac3.png");
+    transform: scale(1.03);
+}
+
+#ban4:hover {
+    background-image: url("images/ac4.png");
+    transform: scale(1.03);
+}
+
+#modal6 {
+    width: 100%;
+    /* reset padding */
+    padding: 5px;
+
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.box-proj {
+    min-width: 250px;
+    max-width: 300px;
+    border: 1px solid var(--clr-themeDrop);
+    margin: 0.5em 0.5em;
+    /* padding: 0.2em; */
+}
+
+.box-proj img {
+    width: 100%;
+}
+
+.box-text {
+    padding: 5px;
+}
+
+
+#mobile-menu {
+    min-width: 200px;
+    max-width: 300px;
+    height: 100%;
+    background-color: black;
+
+    /* display: fixed; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    transform: translateX(-200px);
+    transition: all 1s;
+    display: none;
+}
+
+#mobile-menu ul li {
+    border: 1px solid var(--clr-themeDrop);
+    color: var(--clr-theme);
+    display: block;
+    padding: 1em;
+}
+
+#mobile-menu ul li:hover {
+    cursor: pointer;
+    background-color: var(--clr-theme);
+    color: black;
+}
+
+#mob-prof {
+    margin: 0 auto;
+}
+
+#mob-prof img{
+    border: 1px solid var(--clr-themeDrop);
+    width: 80px;
+    height: auto;
+    margin: 10px 0px;
+}
 
 
 /* ==================footer stuff====================== */
 
 footer {
     width: 100%;
-    height: 150px;
+    height: 120px;
 
-    background-color: orange;
+    background-color: var(--clr-theme);
 
     /* position is fixed... */
     position: fixed;
@@ -233,20 +469,100 @@ footer {
     left: 0;
 
     /* on top foremost */
-    z-index: 9999;
+    z-index: 100;
 
     /* hide the footer */
-    /* display: none; */
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+
 }
 
-footer img {
-    /* width: 100px; */
-    height: 150%;
+#fimg {
+    width: 100px;
+    transform: translate(40%, -50%);
+}
 
+#fimg img {
+    width: 150px;
+    height: auto;
     border-radius: 40%;
-    border: 2px solid orange;
-    float: left;
-    /* margin: 0 0; */
-    transform: translate(25%, -45%);
+    border: 2px solid var(--clr-theme);
+}
 
+
+footer h3, p {
+    color: white;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    text-align:left;
+
+    padding: 0 0.5em;
+}
+
+footer h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+footer p {
+    font-size: smaller;
+}
+
+#about {
+    max-width: 350px;
+}
+
+#contact {
+    max-width: 400px;
+}
+
+#connect i {
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 30px;
+    color: black;
+}
+
+#connect i:hover {
+    transform: scale(1.2);
+    /* box-shadow: 2px 2px 10px black; */
+
+    filter: drop-shadow(0px 0px 15px white);
+    transition: all 0.5s;
+}
+
+#footer2 {
+    height: 50px;
+    width: 100%;
+    background-color: var(--clr-theme);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+
+
+/* mobile version======================================================= */
+
+@media(max-width:500px){
+
+    .banner {
+        max-height: 400px;
+    }
+
+    #modal6 {
+        grid-template-columns: 1fr;
+    }
+    
+    footer {
+        transform: scale(0);
+        transform-origin: bottom;
+        transition: all 1s;
+    }
+
+    #mobile-menu {
+        display: block;
+    }
 }
