@@ -8,7 +8,7 @@
             ".....", // put as the fill in only so easy numbering start 1, lol
             "Hey, welcome back.. <br/> my designer not in the house right naw.. <br/> Please come in..", 
 
-            "huff, huff... <br/> gotta burn the fat... <br/>  huff.. huff.. <br/> my designer will be coming back.. <br/> Do you want to know about my designer nya ?", 
+            "huff, huff... <br/> gotta burn the fat... <br/>  huff.. huff.. <br/> my designer will be coming back.. <br/> Do you want to know about my designer ?", 
 
             "..... <br/> ..... <br/> ...... <br/> I'm not here....<br/> go away...", 
 
@@ -34,6 +34,7 @@
 
         
         var stopWriter = setInterval(function(){
+
             classN[dialogNum - 1].style.display = 'block';
 
             if (textBegin <= totalLength) {
@@ -54,8 +55,6 @@
                 textBegin = 0;
                 // console.log("on writer stop");
 
-
-
                 document.getElementById(`but${dialogNum}`).style.display='block';
                 
                 if (dialogNum == 8) {
@@ -63,8 +62,8 @@
                     document.getElementById('leave-email').style.display='block';
                     document.getElementById('leave-msg').style.display='block';
                 }
-            }
 
+            }
 
         },10)
 
@@ -165,6 +164,9 @@
                 var scalePosY = scale*posSle.y*posOrigin.H;
                 var scalePosX = scale*posSle.x*posOrigin.W;
                 break;
+            
+            default:
+                break;
 
         }
 
@@ -234,14 +236,15 @@
     })
 
     var posInc2 = 0;
-
+    
     function centralisedCat2 () {
+        
 
-        if (posInc2 <=7){
+        if (posInc2 <= 7){
             posInc2 += 1;
 
         } else {
-            posInc2 = 8;
+            posInc2 = 0;
         }
 
         console.log(posInc2);
