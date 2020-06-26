@@ -39,6 +39,9 @@ a {
 }
 
 header {
+
+    /* admin button */
+    display: none;
     width: 100%;
     height: 50px;
     
