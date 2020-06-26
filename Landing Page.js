@@ -1,3 +1,77 @@
+    // function on dialog, typewriter ===========================
+
+    var dialogNum;
+
+    function typeWriter(dialogNum) {
+
+        var dataText = [
+            ".....", // put as the fill in only so easy numbering start 1, lol
+            "Hey, welcome back.. <br/> my master not in the house right naw.. <br/> Please come in..", 
+
+            "huff, huff... <br/> gotta burn the fat... <br/>  huff.. huff.. <br/> my master will be coming back.. <br/> Do you want to know about my master nya ?", 
+
+            "..... <br/> ..... <br/> ...... <br/> I'm not here....<br/> go away...", 
+
+            "Zzz..... <br/> Zzz..... <br/> my master is awesome. <br/> I'm dreaming in his achievements..",
+
+            "Hmm... What is he doing there? <br/>", 
+
+            "Hey....hey... Wanna see my master projects...? <br/>  Don't tell that guy..",
+
+            "Ooohh.... Wuw...... <br/>Hear me singing!", 
+
+            "Ops... that's all folks, <br/>  leave some notes before you leave...",
+        ];
+
+        // console.log(dataText);
+        var dataT = dataText[dialogNum];
+        // console.log(dataT, typeof dataT);
+        
+        
+        var totalLength = dataT.length;
+        var textBegin = 0;
+        var classN = document.getElementsByClassName('talkBox');
+
+        
+        var stopWriter = setInterval(function(){
+            classN[dialogNum - 1].style.display = 'block';
+
+            if (textBegin <= totalLength) {
+
+                textBegin += 1;
+
+                document.getElementById(`para${dialogNum}`).style.color = "blue";
+                document.getElementById(`para${dialogNum}`).innerHTML = dataT.substring(0 , textBegin);
+
+                // make the scroll down in chatroom to bottom
+                // document.querySelectorAll('.talkBox').scrollTop = document.querySelectorAll('.talkBox').scrollHeight;
+
+                
+            } else {
+                
+                // stop the writing in looping
+                clearInterval(stopWriter);
+                textBegin = 0;
+                // console.log("on writer stop");
+
+
+
+                document.getElementById(`but${dialogNum}`).style.display='block';
+                
+                if (dialogNum == 8) {
+                    document.getElementById('leave-name').style.display='block';
+                    document.getElementById('leave-email').style.display='block';
+                    document.getElementById('leave-msg').style.display='block';
+                }
+            }
+
+
+        },30)
+
+    }
+
+
+
 
     //function to arrange screen and scale ============================
 
@@ -96,6 +170,8 @@
 
         zeroOri.style.top = `${offSetTO - scalePosY + 0.6*wH}px`;   
         zeroOri.style.left = `${offSetLO - scalePosX + 0.6*wW}px`;
+
+        typeWriter(posN);
     }
 
     // detect window resize to triggered event
@@ -161,78 +237,7 @@
 
 
 
-    // function on dialog, typewriter ===========================
-
-    var dialogNum;
-
-    function typeWriter(dialogNum) {
-
-        var dataText = [
-            ".....", // put as the fill in only so easy numbering start 1, lol
-            "Hey, welcome back.. <br/> my master not in the house right naw.. <br/> Please come in..", 
-
-            "huff, huff... <br/> gotta burn the fat... <br/>  huff.. huff.. <br/> my master will be coming back.. <br/> Do you want to know about my master nya ?", 
-
-            "..... <br/> ..... <br/> ...... <br/> I'm not here....<br/> go away...", 
-
-            "Zzz..... <br/> Zzz..... <br/> my master is awesome. <br/> I'm dreaming in his achievements..",
-
-            "Hmm... What is he doing there? <br/>", 
-
-            "Hey....hey... Wanna see my master projects...? <br/>  Don't tell that guy..",
-
-            "Ooohh.... Wuw...... <br/>Hear me singing!", 
-
-            "Ops... that's all folks, <br/>  leave some notes before you leave...",
-        ];
-
-        // console.log(dataText);
-        var dataT = dataText[dialogNum];
-        // console.log(dataT, typeof dataT);
-        
-        
-        var totalLength = dataT.length;
-        var textBegin = 0;
-        var classN = document.getElementsByClassName('talkBox');
-
-        
-        var stopWriter = setInterval(function(){
-            classN[dialogNum - 1].style.display = 'block';
-
-            if (textBegin <= totalLength) {
-
-                textBegin += 1;
-
-                document.getElementById(`para${dialogNum}`).style.color = "blue";
-                document.getElementById(`para${dialogNum}`).innerHTML = dataT.substring(0 , textBegin);
-
-                // make the scroll down in chatroom to bottom
-                // document.querySelectorAll('.talkBox').scrollTop = document.querySelectorAll('.talkBox').scrollHeight;
-
-                
-            } else {
-                
-                // stop the writing in looping
-                clearInterval(stopWriter);
-                textBegin = 0;
-                // console.log("on writer stop");
-
-
-
-                document.getElementById(`but${dialogNum}`).style.display='block';
-                
-                if (dialogNum == 8) {
-                    document.getElementById('leave-name').style.display='block';
-                    document.getElementById('leave-email').style.display='block';
-                    document.getElementById('leave-msg').style.display='block';
-                }
-            }
-
-
-        },50)
-
-    }
-
+    
 
     // function related to music singing by cat =========================
 
@@ -269,7 +274,7 @@
     }
 
     
-    //funtion on modal ===============================================
+    //function on modal ===============================================
     var modalN = 0;
     var modalMain = document.getElementById('modalMain');
 
@@ -292,7 +297,7 @@
         modalMain.style.display = 'none';
     }
 
-    //funtion on dark ==================================================
+    //function on dark ==================================================
 
     var darken = false;
 

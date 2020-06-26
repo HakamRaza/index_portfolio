@@ -74,6 +74,8 @@ header {
     /* scale will translate, expand from center., need to adjust 0,0 */
     transform: scale(2);
 
+    transition: all 2s;
+
 
 }
 
